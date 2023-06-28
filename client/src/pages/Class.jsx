@@ -1,9 +1,12 @@
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import newRequest from "../functions/newRequest";
-import Photos from "../components/Photos";
+import SignUp from "../components/ClassComponents/SignUp";
+import NavBar from "../components/NavBar";
+import ClassPhotos from "../components/PhotoComponents/ClassPhotos";
 
 const Class = () => {
+
   const { id } = useParams();
 
   const { data, isLoading, error, refetch } = useQuery({
@@ -33,38 +36,31 @@ const Class = () => {
 
   return (
     <>
-      <main className="w-screen h-screen flex flex-col">
-        <div className="w-screen h-[95px] bg-black text-white flex justify-center items-center">
+      <main className="w-full h-full flex flex-col justify-center items-center">
+      <NavBar />
+        <div class="w-full h-full flex mt-12">
+          <div class="flex flex-col w-[50%] justify-center items-center space-y-9">
+            <article class="shadow-lg p-6 rounded-full w-[350px] h-[350px] flex flex-col items-center justify-center">
+              <h2 class="underline-offset-1">Description:</h2>
+              <p>
+                <b>{data.description}</b>
+              </p>
+            </article>
+            <article class="shadow-lg p-6 rounded-full w-[350px] h-[350px] flex items-center justify-center">
+              Informacion general:
+              <ul>
+                <li>{data.teacher}</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="flex flex-col w-[50%] justify-center">
+            <SignUp className={data?.name} classId={id} days={data?.days}/>
+          </div>
           
-        <Link
-          className="self-center bg-black text-white rounded-3xl p-2 m-2 hover:text-blue-500"
-          to="/"
-        >
-          {" "}
-          Volver al inicio
-        </Link>
-          AVV BARRIO DE LA CRUZ
         </div>
-       
-        <header className="w-[40%] h-8 bg-gray-500 text-white mx-auto flex items-center justify-center rounded-3xl text-3xl p-6 m-2">
-          Clase de {data.name}
-        </header>
-
-        <div class="w-full h-full flex mt-12 justify-center gap-9">
-          
-         <div className="flex flex-col ">
-            <article className="shadow-lg p-6 rounded-full w-[350px] h-[350px] flex items-center justify-center">Description: {data.description}</article>
-            <article className="shadow-lg p-6 rounded-full w-[350px] h-[350px] flex items-center justify-center">Informacion general: <ul><li>{data.teacher}</li></ul> </article>
-          </div> 
-
-          <article>
-            
-          </article>
-     
-        </div>
-
       </main>
-      <Photos />
+      <ClassPhotos collectionName={data.collectionName} classTitle={data.name}/>
     </>
   );
 };

@@ -29,8 +29,6 @@ const EventList = ({ event }) => {
     event.search =""
   }, [event]);
 
-  console.log(data)
-
   return (
     <div className="flex justify-center items-center flex-col gap-2">
       {

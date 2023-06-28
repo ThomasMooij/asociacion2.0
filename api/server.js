@@ -43,7 +43,6 @@ app.use('/api/attendees', attendeesRoute)
 app.use('/api/events', eventsRoute)
 app.use('/api/pics', picsRoute)
 
-
 app.listen(port , ()=> {
     connect();
     console.log(`http://localhost:${port}`)

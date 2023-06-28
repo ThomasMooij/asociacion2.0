@@ -82,25 +82,24 @@ const EventIndex = () => {
     }));
   };
 
-  console.log(gezelligeVar)
-
   return (
-    <main className="w-screen h-full content mt-6 flex flex-col">
+    <main className="w-screen h-full content mt-6 flex flex-col items-center max-w-full">
       <Banner title={`los eventos que organizamos en ${gezelligeVar.selectedMonth}`} />
       {/* Aside section */}
       <div className="flex w-full h-full gap-8">
-      <section className=" shadow-lg w-[350px]">
+      <section className=" hidden md:block shadow-lg w-[350px]">
         <aside>
-          <div>
+         
             <input
+            className="p-4 w-full" 
               value={gezelligeVar.search}
               type="text"
               placeholder="Buscar .."
               onKeyDown={handleKey}
               onChange={handleChange}
             />
-          </div>
-          <div className="flex flex-col p-2 gap-3">
+        
+          <div className=" flex flex-col p-2 gap-3">
             {months.map((month, i) => (
               <article
                 className={`text-2xl cursor-pointer font-light hover:bg-slate-300 border rounded-md ${ gezelligeVar.selectedMonth === month.label ? 'bg-[#D3D3D3]' : '' }`}
@@ -117,7 +116,7 @@ const EventIndex = () => {
         </aside>
       </section>
       {/* Eventlist section */}
-      <section className="w-full">
+      <section className="w-full ">
         <EventList event={gezelligeVar}/>
       </section>
       </div>
