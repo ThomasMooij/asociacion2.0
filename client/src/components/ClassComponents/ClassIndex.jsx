@@ -31,13 +31,15 @@ const ClassIndex = () => {
   }
 
   useEffect(() => {
-    refetch()
+    setTimeout(() => {
+      refetch();
+    }, 1000); 
   }, [search])
 
   const LazyEvent = lazy(() => import("./ClassCard"));
 
   return (
-    <main className="w-full h-full flex flex-col gap-7 max-w-full">    
+    <main id="Clases" className="w-full h-full flex flex-col gap-7 max-w-full">    
         <section className="flex justify-center flex-col items-center gap-4 ">
         <Banner title={'las clases que ofrecemos en la asociacion'} />
           <article className="eventSearch">

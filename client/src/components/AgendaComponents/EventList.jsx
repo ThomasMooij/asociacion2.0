@@ -32,10 +32,9 @@ const EventList = ({ event }) => {
   return (
     <div className="flex justify-center items-center flex-col gap-2">
       {
-        data?.length === 0 ? "No hay eventos para estas fechas" :
+        data?.length === 0 ? <p>"No hay eventos para estas fechas" </p> :
         <Pagination itemsPerPage={3} items={data} LazyCard={LazyEvent} />
       }
-      
     </div>
   );
 };

@@ -56,9 +56,6 @@ export const uploadController = (req, res) => {
       const fileNames = req.files.map((file) => file.filename);
       const { collectionName } = req.body;
 
-      // Verwerk de geüploade foto's
-      // ...
-
       res.status(200).json({ message: "Upload successful" });
     });
   } catch (err) {

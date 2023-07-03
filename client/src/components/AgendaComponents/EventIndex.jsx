@@ -83,7 +83,7 @@ const EventIndex = () => {
   };
 
   return (
-    <main className="w-screen h-full content mt-6 flex flex-col items-center max-w-full">
+    <main id="Agenda" className="w-screen h-full content mt-6 flex flex-col items-center max-w-full">
       <Banner title={`los eventos que organizamos en ${gezelligeVar.selectedMonth}`} />
       {/* Aside section */}
       <div className="flex w-full h-full gap-8">

@@ -58,6 +58,10 @@ export const updateEvent = async (req,res,next) => {
 export const deleteEvent = async (req,res,next) => {
   if(req.presidente != true) {
     next(createError(403, 'not allowed'))
+  }else{
+    const targetEvent = await Event.findByIdAndDelete(req.params.id)
+
+    res.status(200).send(targetEvent)
   }
 
 }

@@ -8,6 +8,6 @@ router.get('/', getEvents)
 router.get('/:id', getEvent)
 router.post('/create', verifyToken, createEvent)
 router.put('/update/:id' , verifyToken, updateEvent)
-router.delete('/delete', verifyToken, deleteEvent)
+router.delete('/delete/:id', verifyToken, deleteEvent)
 
 export default router

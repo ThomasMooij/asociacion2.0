@@ -32,7 +32,7 @@ const ClassList = ({ search }) => {
         <Pagination itemsPerPage={numOfClasses} items={data} LazyCard={LazyClass} />
       )}
       {data?.length === 0 ? (
-        <p>No se encontró una clase con ese nombre, inténtalo de nuevo</p>
+        <p>De momento no hay clases</p>
       ) : null}
     </section>
   );

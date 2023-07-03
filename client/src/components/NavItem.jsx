@@ -19,7 +19,7 @@ const NavItem = ({
     onClick={()=> {setSelectedPage(lowerCasePage); setMobile(false)}}
     to={page || "/"} 
     smooth={true} 
-    offset={-250} 
+    offset={-350} 
     duration={500}
     spy={true}
     className={`${isPage} border-none cursor-pointer text-2xl hover:text-green-500 active:text-green-500`}>{page}</Link>

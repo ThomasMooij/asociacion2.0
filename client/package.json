@@ -1,5 +1,5 @@
 {
-  "name": "restaurant",
+  "name": "AVV",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,6 +21,7 @@
     "react-router-dom": "^6.11.2",
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
+    "react-select": "^5.7.3",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

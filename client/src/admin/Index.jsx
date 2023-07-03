@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import NavBar from "../components/NavBar";
-import Attendees from "./components/Attendees";
-import Classes from "./components/Classes";
-import Events from "./components/Events";
+import Attendees from "./components/attendee/Attendees";
+import Classes from "./components/class/Classes";
+import Events from "./components/event/Events";
 import { SelectedComponentContext } from "./context/AdminContext";
 
 const Index = () => {
@@ -15,16 +15,19 @@ const Index = () => {
   };
 
   const renderSelectedComponent = () => {
-    if (selectedComponent === 'attendees') {
+    if (selectedComponent === "attendees") {
       return <Attendees />;
     }
-    if (selectedComponent === 'classes') {
+    if (selectedComponent === "classes") {
       return <Classes />;
     }
-    if (selectedComponent === 'events') {
+    if (selectedComponent === "events") {
       return <Events />;
-    }else{
-        return <div>Bienvenido mi presidente!</div>
+    }
+    if (selectedComponent === "events") {
+      return <Events />;
+    } else {
+      return <div>Bienvenido mi presidente!</div>;
     }
   };
 
@@ -36,22 +39,34 @@ const Index = () => {
         <div className="bg-gray-200 w-1/4 py-4 px-8">
           <div className="flex flex-col gap-4">
             <button
-              onClick={() => handleComponentSelect('attendees')}
+              onClick={() => handleComponentSelect("attendees")}
               className="bg-green-500 text-white rounded-md py-2 px-4"
             >
               Participantes
             </button>
             <button
-              onClick={() => handleComponentSelect('classes')}
+              onClick={() => handleComponentSelect("classes")}
               className="bg-green-500 text-white rounded-md py-2 px-4"
             >
               Clases
             </button>
             <button
-              onClick={() => handleComponentSelect('events')}
+              onClick={() => handleComponentSelect("events")}
               className="bg-green-500 text-white rounded-md py-2 px-4"
             >
-              Events
+              Eventos
+            </button>
+            <button
+              onClick={() => handleComponentSelect("photos")}
+              className="bg-green-500 text-white rounded-md py-2 px-4"
+            >
+              Fotos
+            </button>
+            <button
+              onClick={() => handleComponentSelect("photos")}
+              className="bg-green-500 text-white rounded-md py-2 px-4"
+            >
+              Anuncio
             </button>
           </div>
         </div>

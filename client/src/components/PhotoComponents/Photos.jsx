@@ -20,7 +20,7 @@ const Photos = () => {
   })
 
   return (
-    <section className="flex flex-col justify-center items-center">
+    <section id="Photos" className="flex flex-col justify-center items-center max-w-full">
       <Banner title="Colecciones de fotos" />
     <main className="grid grid-cols-1 gap-8 p-10 md:grid-cols-2">
     {

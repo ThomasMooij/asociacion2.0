@@ -1,7 +1,7 @@
-import { useQuery } from '@tanstack/react-query';
-import { useState } from 'react';
-import newRequest from '../../functions/newRequest';
-import SingleAttendee from './SingleAttendee';
+import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
+import newRequest from "../../../functions/newRequest";
+import SingleAttendee from "./SingleAttendee";
 
 const Attendees = () => {
   const [search, setSearch] = useState("");
@@ -22,7 +22,7 @@ const Attendees = () => {
   };
 
   const handleChange = (e) => {
-    refetch()
+    refetch();
     setSearch(e.target.value);
   };
 
@@ -50,7 +50,9 @@ const Attendees = () => {
       )}
 
       {data?.length === 0 && (
-        <p>No se encontró ningún asistente con ese nombre, inténtalo de nuevo.</p>
+        <p>
+          No se encontró ningún asistente con ese nombre, inténtalo de nuevo.
+        </p>
       )}
     </main>
   );

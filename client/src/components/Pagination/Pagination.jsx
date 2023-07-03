@@ -10,7 +10,7 @@ const Pagination = ({ itemsPerPage, items, LazyCard }) => {
   if(!items) {
     return  <div>Loading...</div>;
   }else{
-
+    
     function Items({ currentItems }) {
       return (
         <>
@@ -40,11 +40,11 @@ const Pagination = ({ itemsPerPage, items, LazyCard }) => {
         <Items currentItems={currentItems} />
         <ReactPaginate
           breakLabel="..."
-          nextLabel="Siguiente >"
+          nextLabel=" >"
           onPageChange={handlePageClick}
           pageRangeDisplayed={5}
           pageCount={pageCount}
-          previousLabel="< Anterior"
+          previousLabel="< "
           renderOnZeroPageCount={null}
           containerClassName={"pagination"}
           previousLinkClassName={"pagination__link"}
