@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Delete, Check, Close, Edit } from "@mui/icons-material";
 import newRequest from "../../../functions/newRequest.js";
-import { months, years } from "../times.js";
+import { months, years } from "../../times.js";
 
 const SingleEvent = ({ key, item, index, onDelete }) => {
   const [eventInfo, setEventInfo] = useState(item);
@@ -18,18 +18,21 @@ const SingleEvent = ({ key, item, index, onDelete }) => {
   const updateEvent = async () => {
     try {
       await newRequest.put(`/events/update/${item._id}`, { ...eventInfo });
-      navigate("/admin");
+
+      setEditing(false)
     } catch (error) {
       alert(error.message);
     }
   };
+
+  console.log(eventInfo)
 
   return (
     <main className="p-4">
       <button 
       onClick={() => setEditing(!editing)}
       className="bg-white rounded-md p-4 shadow-md flex gap-2">
-        <p> Cambiar datos del evento '{eventInfo.name}'</p>
+        <p>{index + 1} Cambiar datos del evento '{eventInfo.name}'</p>
         <Edit />
       </button>
     {editing &&
@@ -126,7 +129,7 @@ const SingleEvent = ({ key, item, index, onDelete }) => {
 
       <div className="flex justify-end gap-2">
         <Check onClick={updateEvent} className="cursor-pointer" />
-        <Close onClick={() => navigate("/admin")} className="cursor-pointer" />
+        <Close onClick={() => setEditing(false)} className="cursor-pointer" />
         <Delete onClick={() => onDelete(item._id)} className="cursor-pointer" />
       </div>
     </>
