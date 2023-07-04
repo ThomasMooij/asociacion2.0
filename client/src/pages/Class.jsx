@@ -30,9 +30,11 @@ const Class = () => {
     }
   }
 
-  if (!data) {
+  if (isLoading) {
     return <p>Un momento de su precioso tiempo por favor ..</p>;
   }
+
+  // if error return error component with error message prop. 
 
   return (
     <>
@@ -43,13 +45,13 @@ const Class = () => {
             <article class="shadow-lg p-6 rounded-full w-[350px] h-[350px] flex flex-col items-center justify-center">
               <h2 class="underline-offset-1">Description:</h2>
               <p>
-                <b>{data.description}</b>
+                <b>{data?.description}</b>
               </p>
             </article>
             <article class="shadow-lg p-6 rounded-full w-[350px] h-[350px] flex items-center justify-center">
               Informacion general:
               <ul>
-                <li>{data.teacher}</li>
+                <li>{data?.teacher}</li>
               </ul>
             </article>
           </div>
@@ -60,7 +62,7 @@ const Class = () => {
           
         </div>
       </main>
-      <ClassPhotos collectionName={data.collectionName} classTitle={data.name}/>
+      <ClassPhotos collectionName={data?.collectionName} classTitle={data?.name}/>
     </>
   );
 };

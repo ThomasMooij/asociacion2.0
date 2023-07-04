@@ -4,6 +4,8 @@ import ClassIndex from '../components/ClassComponents/ClassIndex'
 import Landing from '../components/Landing'
 import NavBar from '../components/NavBar'
 import Photos from '../components/PhotoComponents/Photos'
+import Contact from '../components/Contact.jsx'
+import Footer from '../components/Footer'
 
 const Home = () => {
   const [selectedPage, setSelectedPage] = useState('inicio')
@@ -36,7 +38,8 @@ const Home = () => {
         <ClassIndex />
         <EventIndex />
         <Photos />
-        
+        <Contact />
+        <Footer />
     </>
   )
 }
