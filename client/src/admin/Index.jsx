@@ -4,6 +4,7 @@ import Attendees from "./components/attendee/Attendees";
 import Classes from "./components/class/Classes";
 import Events from "./components/event/Events";
 import { SelectedComponentContext } from "./context/AdminContext";
+import PhotoUpload from "./PhotoUpload";
 
 const Index = () => {
   const { selectedComponent, updateSelectedComponent } = useContext(
@@ -24,8 +25,8 @@ const Index = () => {
     if (selectedComponent === "events") {
       return <Events />;
     }
-    if (selectedComponent === "events") {
-      return <Events />;
+    if (selectedComponent === "photos") {
+      return <PhotoUpload />;
     } else {
       return <div>Bienvenido mi presidente!</div>;
     }

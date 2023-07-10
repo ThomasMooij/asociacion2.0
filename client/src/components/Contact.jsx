@@ -5,14 +5,13 @@ const ContactForm = () => {
     <>
    
    
-    <main className='w-screen h-full max-w-full flex flex-col items-center'>
+    <main id="Contacto" className='w-screen h-full max-w-full flex flex-col items-center'>
     <Banner title="Pongase en contacto con nosotros" />
-    <div className="w-[60%] p-6 bg-beige rounded-lg shadow-md border-2 border-yellow-500">
-      <h2 className="text-xl font-bold mb-4">Contactformulier</h2>
+    <div className="w-[60%] p-12 bg-beige rounded-lg shadow-md border-2 mb-11 border-yellow-500">
       <form>
         <div className="mb-4">
           <label htmlFor="name" className="block mb-2">
-            Naam:
+            Su nombre completo:
           </label>
           <input
             type="text"
@@ -34,7 +33,7 @@ const ContactForm = () => {
         </div>
         <div className="mb-4">
           <label htmlFor="message" className="block mb-2">
-            Bericht:
+            Mensaje:
           </label>
           <textarea
             id="message"

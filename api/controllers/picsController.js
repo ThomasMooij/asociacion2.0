@@ -101,7 +101,6 @@ export const photosController = (req, res) => {
 }
 
 export const photoController = (req, res) => {
-  console.log(req.params)
   const collectionNames = req.params.collectionName.split(","); // Ontvang een lijst van namen gescheiden door een komma
 
   const __filename = fileURLToPath(import.meta.url);
@@ -132,4 +131,24 @@ export const photoController = (req, res) => {
 
   // Stuur de collecties terug naar de frontend
   res.json({ collections });
+}
+
+export const titleChecker = (req , res) => {
+  console.log("In title check controller")
+  
+  const { title } = req.body;
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+  app.locals.rootDir = path.resolve(__dirname, '../assets/uploads');
+  const uploadsDir = app.locals.rootDir;
+
+  console.log(uploadsDir)
+  const folderExists = fs.existsSync(path.join(uploadsDir, title));
+
+  if (folderExists) {
+    console.log("exists set to true")
+    return res.json({ exists: true });
+  }
+
+  return res.json({ exists: false });
 }

@@ -1,3 +1,5 @@
 Days not correctly rendered on classcards.
 Collection dansles met fin, 2023 doesnt loaded, deleted? ( Cannot set headers after they are sent to the client)
 soms laden main pagina foto's niet
+    "react-paginate": "^8.2.0",
+    "react-pagination": "^1.0.0", Les deux ?
