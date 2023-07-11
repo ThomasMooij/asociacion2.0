@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import newRequest from "../functions/newRequest";
 
@@ -82,12 +82,9 @@ const PhotoUpload = () => {
     multiple: true,
   });
 
-  console.log(titleExists);
-  console.log(error);
-
   return (
-    <form onSubmit={handleSubmit} className="picSection">
-      <div className="picForm">
+    <form onSubmit={handleSubmit}>
+      <div>
         <label htmlFor="collectionName" className="text-xl font-bold mb-2">
           Titulo de la coleccion (Tenga en cuenta que solo se puede subir una
           coleccion con el mismo titulo):
